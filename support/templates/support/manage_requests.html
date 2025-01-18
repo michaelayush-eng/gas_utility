@@ -1,0 +1,32 @@
+<!-- templates/support/manage_requests.html -->
+{% extends 'service_requests/base.html' %}
+
+{% block content %}
+<h3 class="mt-4">All Service Requests</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Customer</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Submitted At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for request in requests %}
+    <tr>
+      <td>{{ request.id }}</td>
+      <td>{{ request.customer.username }}</td>
+      <td>{{ request.request_type }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.submitted_at }}</td>
+      <td>
+        <a href="/support/update/{{ request.id }}/" class="btn btn-primary btn-sm">Update</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

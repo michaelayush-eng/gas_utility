@@ -1,0 +1,28 @@
+<!-- templates/service_requests/track_requests.html -->
+{% extends 'service_requests/base.html' %}
+
+{% block content %}
+<h3 class="mt-4">Your Service Requests</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Submitted At</th>
+      <th>Resolved At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for request in requests %}
+    <tr>
+      <td>{{ request.id }}</td>
+      <td>{{ request.request_type }}</td>
+      <td>{{ request.status }}</td>
+      <td>{{ request.submitted_at }}</td>
+      <td>{{ request.resolved_at|default:"-" }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

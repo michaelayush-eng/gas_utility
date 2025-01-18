@@ -1,0 +1,17 @@
+<!-- templates/service_requests/create_request.html -->
+{% extends 'service_requests/base.html' %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header text-black">
+    <h4 class="mt-4">Submit a Service Request</h4>
+  </div>
+  <div class="card-body">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

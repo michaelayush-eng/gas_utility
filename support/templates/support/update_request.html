@@ -1,0 +1,27 @@
+{% extends 'service_requests/base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Service Request</title>
+</head>
+<body>
+    <h1 class="mt-4">Update Service Request #{{ service_request.id }}</h1>
+    <p>Type: {{ service_request.request_type }}</p>
+    <p>Description: {{ service_request.description }}</p>
+    <p>Submitted at: {{ service_request.submitted_at }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Request</button>
+    </form>
+
+    <a href="{% url 'manage_requests' %}">Back to Manage Requests</a>
+</body>
+</html>
+{% endblock %}

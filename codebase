@@ -1,0 +1,33 @@
+project_root/
+│
+├── consumer_services/
+│   ├── settings.py        # Project settings
+│   ├── urls.py            # Root URL configurations
+│   ├── wsgi.py            # WSGI entry point
+│   ├── asgi.py            # ASGI entry point
+│   └── __init__.py
+│
+├── accounts/              # User authentication and profile management
+│   ├── models.py
+│   ├── views.py   
+│   ├── urls.py
+│   ├── templates/         # User-related templates
+│   └── forms.py
+│
+├── service_requests/      # Feature for handling service requests
+│   ├── models.py          # Request-related database models
+│   ├── views.py           # Handles customer-facing views
+│   ├── urls.py            # App-specific URLs
+│   ├── templates/         # Service request-related templates
+│   └── forms.py           # Django forms for requests
+│
+├── support/               # Admin/customer support module
+│   ├── models.py          # Support-specific data, if any
+│   ├── views.py           # Handles support-facing views
+│   ├── urls.py            # URLs for the support module
+│   └── templates/         # Templates for support functionality
+│
+│
+├── manage.py              # Django management script
+│
+└── requirements.txt       # Project dependencies
